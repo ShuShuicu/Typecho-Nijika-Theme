@@ -33,6 +33,7 @@ function PostSidebar()
             <a-list style="margin-bottom: 10px;">
                 <a-list-item><?php GetPost::Category() ?></a-list-item>
                 <a-list-item><?php GetPost::Tags() ?></a-list-item>
+                <a-list-item>
                 <?php
                 $DownloadUrl = Get::Fields('NijikaDownloadUrl');
 
@@ -50,24 +51,26 @@ function PostSidebar()
                         $Info = $matches[3]; // 说明
                     }
 
-                    if (!empty($Text) && !empty($Link) && !empty($Info)) { // 确保所有变量都有值
-                ?>
-                        <a-list-item>
-                            <a-trigger position="bottom" auto-fit-position :unmount-on-close="false">
+                    if (!empty($Text) && !empty($Link)) { // 确保变量都有值
+                        // 判断 Info 是否为空
+                        $displayText = !empty($Info) ? $Info : "前往 $Text 下载";
+                        ?>
+                        <a-trigger position="bottom" auto-fit-position :unmount-on-close="false">
                                 <a-link href="<?php echo htmlspecialchars($Link); ?>" target="_blank" icon><?php echo htmlspecialchars($Text); ?></a-link>
                                 <template #content>
                                     <a-card>
-                                        <?php echo htmlspecialchars($Info); ?>
+                                        <?php echo htmlspecialchars($displayText); ?>
                                     </a-card>
                                 </template>
                             </a-trigger>
-                        </a-list-item>
-                <?php
+                        <?php
                     }
                 }
                 ?>
+                </a-list-item>
             </a-list>
         </a-card>
     </a-col>
 <?php
 }
+?>

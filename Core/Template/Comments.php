@@ -18,7 +18,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <?php } ?>
                     <a-textarea name="text" placeholder="万水千山总是情，评论一句行不行~" allow-clear><?php $this->remember('text'); ?></a-textarea>
                     <div style="text-align: right;">
-                    <a-button type="primary" html-type="submit" style="margin-top: 10px;">提交评论</a-button>
+                    <a-button type="primary" html-type="submit">提交评论</a-button>
                     </div>
                 </form>
 

@@ -43,4 +43,12 @@ function themeConfig($form)
         _t('顶部导航'),
         _t('顶部自定义导航栏，格式为 名称|链接，多个导航请换行。')
     ));
+
+    $form->addInput(new \Typecho\Widget\Helper\Form\Element\Textarea(
+        'postCopyright',
+        null,
+        '资源均来自互联网收集，如有侵权请与站长联系。',
+        _t('版权说明'),
+        _t('文章/下载版权说明。')
+    ));
 }

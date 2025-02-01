@@ -11,7 +11,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function PostComment()
 {
 ?>
-    <a-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18" :xxl="18" style="margin-right: 10px;margin-bottom: 10px;">
+    <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="18" :xxl="18" style="margin-right: 10px;margin-bottom: 10px;">
         <a-card title="<?php GetPost::Title(); ?>">
             <template #extra>
                 <a-link><?php GetPost::Date(); ?></a-link>
@@ -19,14 +19,16 @@ function PostComment()
             <div class="Nijika-typo">
                 <?php GetPost::Content(); ?>
             </div>
+            <a-alert style="margin-top: 20px;"><?php echo Get::Options('postCopyright') ? Get::Options('postCopyright') : '资源均来自互联网收集，如有侵权请与站长联系。' ?></a-alert>
         </a-card>
+        <?php Nijika::GetTemplate('Comments') ?>
     </a-col>
 <?php
 }
 function PostSidebar()
 {
 ?>
-    <a-col :xs="24" :sm="24" :md="5" :lg="5" :xl="5" :xxl="5" id="Sidebar">
+    <a-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5" :xxl="5" id="Sidebar">
         <a-card title="下载信息">
             <a-list style="margin-bottom: 10px;">
                 <a-list-item><?php GetPost::Category() ?></a-list-item>

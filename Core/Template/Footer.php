@@ -35,5 +35,5 @@ foreach ($jsFiles as $js) {
 <?php }; ?>
 <?php Get::Footer() ?>
 </body>
-
+<!-- 加载时间<?php GetFunctions::TimerStop(); ?> -->
 </html>

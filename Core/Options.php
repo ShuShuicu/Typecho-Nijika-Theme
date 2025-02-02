@@ -47,7 +47,7 @@ function themeConfig($form)
     $form->addInput(new \Typecho\Widget\Helper\Form\Element\Textarea(
         'postCopyright',
         null,
-        '资源均来自互联网收集，如有侵权请与站长联系。',
+        '本站文章大部分为原创，用于个人学习记录，可能对您有所帮助，仅供参考！',
         _t('版权说明'),
         _t('文章/下载版权说明。')
     ));

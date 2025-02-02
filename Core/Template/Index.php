@@ -37,3 +37,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <?php
 }
 ?>
+<div style="text-align: center;">    
+    <?php $this->pageLink('<a-button status="danger">上一页</a-button>'); ?>
+    <?php $this->pageLink('<a-button status="warning">下一页</a-button>', 'next'); ?>
+</div>

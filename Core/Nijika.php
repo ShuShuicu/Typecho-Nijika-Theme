@@ -62,18 +62,5 @@ function get_ArticleThumbnail($widget)
     return get_RandomThumbnail($base_url);
 }
 
-function themeFields($layout) 
-{
-// 按钮字段
-$NijikaDownloadUrl = new Typecho_Widget_Helper_Form_Element_Textarea(
-    'NijikaDownloadUrl',
-    NULL,
-    NULL,
-    _t('下载链接'),
-    _t('下载链接<br>格式：名称|链接|说明，多个链接请换行')
-);
-$NijikaDownloadUrl->input->setAttribute('style', 'width: 100%;height: 100px;');
-$layout->addItem($NijikaDownloadUrl);
-}
-
+require_once 'Fields.php';
 require_once 'Options.php';
